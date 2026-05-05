@@ -81,10 +81,10 @@ export default function App() {
           </div>
 
           <div className="max-w-[1400px] mx-auto relative z-10 mt-20 md:mt-32 pt-12 border-t border-white/5">
-            <span className="text-[10px] font-black tracking-[0.5em] text-white/20 uppercase block mb-8 text-center">Sectors We Dominate</span>
-            <div className="flex flex-wrap justify-center gap-x-8 md:gap-x-12 gap-y-4 md:gap-y-6 opacity-20 px-6">
+            <span className="text-[10px] font-black tracking-[0.5em] text-white/50 uppercase block mb-8 text-center">Sectors We Dominate</span>
+            <div className="flex flex-wrap justify-center gap-x-8 md:gap-x-12 gap-y-4 md:gap-y-6 px-6">
               {["Real Estate", "E-Commerce", "B2B SaaS", "Health & Wellness", "FinTech"].map((sector) => (
-                <span key={sector} className="text-lg md:text-2xl font-black font-display uppercase tracking-tighter">{sector}</span>
+                <span key={sector} className="text-lg md:text-2xl font-black font-display uppercase tracking-tighter text-white hover:text-brightlume-gold transition-colors duration-300">{sector}</span>
               ))}
             </div>
           </div>

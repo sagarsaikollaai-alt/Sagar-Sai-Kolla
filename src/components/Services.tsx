@@ -74,7 +74,7 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-3 border-t border-black/10">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 border-t border-black/10">
           {services.map((service, idx) => (
             <motion.div
               key={idx}
@@ -83,29 +83,29 @@ export default function Services() {
               transition={{ delay: idx * 0.1 }}
               viewport={{ once: true }}
               onClick={() => setSelectedService(service)}
-              className="group p-5 md:p-8 lg:p-12 border-b border-r border-black/10 hover:bg-black hover:text-white transition-all duration-700 min-h-[160px] md:min-h-[400px] flex flex-col justify-between cursor-pointer"
+              className="group p-4 sm:p-8 lg:p-12 border-b border-r border-black/10 hover:bg-black hover:text-white transition-all duration-700 min-h-[140px] sm:min-h-[300px] md:min-h-[400px] flex flex-col justify-between cursor-pointer"
             >
-              <div className="space-y-3 md:space-y-6 lg:space-y-8">
-                <span className="text-2xl md:text-4xl font-black text-black/10 group-hover:text-brightlume-gold transition-colors font-display">
+              <div className="space-y-2 sm:space-y-6 lg:space-y-8">
+                <span className="text-xl sm:text-4xl font-black text-black/10 group-hover:text-brightlume-gold transition-colors font-display">
                   0{idx + 1}
                 </span>
-                <h3 className="text-xs sm:text-base md:text-2xl lg:text-4xl font-display font-black leading-tight uppercase group-hover:translate-x-2 md:group-hover:translate-x-4 transition-transform duration-500">
+                <h3 className="text-[10px] sm:text-2xl lg:text-4xl font-display font-black leading-tight uppercase group-hover:translate-x-2 md:group-hover:translate-x-4 transition-transform duration-500">
                   {service.title}
                 </h3>
               </div>
               
-              <div className="space-y-4 md:space-y-8 hidden sm:flex flex-col">
-                <p className="text-sm md:text-lg font-medium tracking-tight opacity-60 group-hover:opacity-100 uppercase leading-snug hidden md:block">
+              <div className="space-y-2 sm:space-y-8 mt-2">
+                <p className="text-[8px] sm:text-base md:text-lg font-medium tracking-tight opacity-60 group-hover:opacity-100 uppercase leading-tight sm:leading-snug line-clamp-2 md:line-clamp-none">
                   {service.desc}
                 </p>
-                <div className="flex flex-wrap gap-1 md:gap-2 mb-4">
-                  {service.deliverables.map((item, iIdx) => (
-                    <span key={iIdx} className="text-[7px] md:text-[9px] font-black tracking-widest border border-black/10 px-1 md:px-2 py-0.5 md:py-1 uppercase opacity-40 group-hover:opacity-100 group-hover:border-white/20">
+                <div className="flex flex-wrap gap-1 md:gap-2 mb-2 sm:mb-4">
+                  {service.deliverables.slice(0, 2).map((item, iIdx) => (
+                    <span key={iIdx} className="text-[6px] sm:text-[9px] font-black tracking-widest border border-black/10 px-1 md:px-2 py-0.5 md:py-1 uppercase opacity-40 group-hover:opacity-100 group-hover:border-white/20">
                       {item}
                     </span>
                   ))}
                 </div>
-                <div className="w-8 h-8 md:w-12 md:h-12 bg-brightlume-gold flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-10 group-hover:translate-y-0 transition-all duration-500">
+                <div className="w-6 h-6 md:w-12 md:h-12 bg-brightlume-gold hidden sm:flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-10 group-hover:translate-y-0 transition-all duration-500">
                   <ArrowIcon />
                 </div>
               </div>
@@ -206,9 +206,9 @@ export default function Services() {
                       }
                     }}
                   >
-                    <input name="name" type="text" required placeholder="YOUR NAME" className="w-full bg-transparent border-b border-white/10 py-3 md:py-4 text-lg md:text-xl font-black uppercase tracking-tighter outline-none focus:border-brightlume-gold transition-colors" />
-                    <input name="email" type="email" required placeholder="YOUR EMAIL" className="w-full bg-transparent border-b border-white/10 py-3 md:py-4 text-lg md:text-xl font-black uppercase tracking-tighter outline-none focus:border-brightlume-gold transition-colors" />
-                    <textarea name="goals" required placeholder="PROJECT GOALS" rows={2} className="w-full bg-transparent border-b border-white/10 py-3 md:py-4 text-lg md:text-xl font-black uppercase tracking-tighter outline-none focus:border-brightlume-gold transition-colors resize-none" />
+                    <input name="name" type="text" required placeholder="YOUR NAME" className="w-full bg-transparent border-b border-white/10 py-3 md:py-4 text-lg md:text-xl font-black uppercase tracking-tighter outline-none placeholder:text-white focus:placeholder:text-white/50 focus:border-brightlume-gold transition-all" />
+                    <input name="email" type="email" required placeholder="YOUR EMAIL" className="w-full bg-transparent border-b border-white/10 py-3 md:py-4 text-lg md:text-xl font-black uppercase tracking-tighter outline-none placeholder:text-white focus:placeholder:text-white/50 focus:border-brightlume-gold transition-all" />
+                    <textarea name="goals" required placeholder="PROJECT GOALS" rows={2} className="w-full bg-transparent border-b border-white/10 py-3 md:py-4 text-lg md:text-xl font-black uppercase tracking-tighter outline-none placeholder:text-white focus:placeholder:text-white/50 focus:border-brightlume-gold transition-all resize-none" />
                     
                     <button type="submit" className="jan-btn w-full py-4 md:py-6 flex items-center justify-between group bg-brightlume-gold text-black mt-4">
                       <span className="text-sm md:text-base">SEND INQUIRY</span>

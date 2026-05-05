@@ -49,7 +49,7 @@ export default function Process() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10">
           {steps.map((step, idx) => (
             <motion.div
               key={idx}
@@ -57,24 +57,24 @@ export default function Process() {
               whileInView={{ opacity: 1 }}
               transition={{ delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="bg-[#0b0b0b] p-6 sm:p-8 md:p-12 group hover:bg-brightlume-gold transition-all duration-700 min-h-[280px] sm:min-h-[400px] md:min-h-[500px] flex flex-col justify-between"
+              className="bg-[#0b0b0b] p-4 sm:p-8 md:p-12 group hover:bg-brightlume-gold transition-all duration-700 min-h-[220px] sm:min-h-[400px] md:min-h-[500px] flex flex-col justify-between"
             >
                <div>
-                <span className="text-4xl md:text-6xl font-black font-display text-white/5 group-hover:text-black/20 transition-colors duration-500">
+                <span className="text-3xl md:text-6xl font-black font-display text-white/5 group-hover:text-black/20 transition-colors duration-500">
                   {step.num}
                 </span>
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-display font-black leading-tight uppercase mt-8 group-hover:translate-x-4 transition-transform duration-500 group-hover:text-black">
+                <h3 className="text-sm sm:text-2xl md:text-3xl lg:text-4xl font-display font-black leading-tight uppercase mt-4 sm:mt-8 group-hover:translate-x-4 transition-transform duration-500 group-hover:text-black">
                   {step.title}
                 </h3>
               </div>
 
-              <div className="space-y-4 md:space-y-8">
-                <p className="text-sm md:text-lg font-medium tracking-tight text-white/40 group-hover:text-black uppercase leading-snug">
+              <div className="space-y-3 sm:space-y-4 md:space-y-8">
+                <p className="text-[10px] sm:text-base md:text-lg font-medium tracking-tight text-white/40 group-hover:text-black uppercase leading-snug line-clamp-3 sm:line-clamp-none">
                   {step.desc}
                 </p>
-                <div className="flex flex-wrap gap-2">
-                  {step.details.map((detail, dIdx) => (
-                    <span key={dIdx} className="text-[10px] font-black tracking-widest border border-white/10 px-3 py-1 uppercase text-white/20 group-hover:border-white/40 group-hover:text-white transition-colors">
+                <div className="flex flex-wrap gap-1 sm:gap-2">
+                  {step.details.slice(0, 2).map((detail, dIdx) => (
+                    <span key={dIdx} className="text-[7px] sm:text-[10px] font-black tracking-widest border border-white/10 px-1.5 sm:px-3 py-0.5 sm:py-1 uppercase text-white/20 group-hover:border-white/40 group-hover:text-white transition-colors">
                       {detail}
                     </span>
                   ))}

@@ -122,13 +122,13 @@ export default function Contact() {
                 }}
               >
                 <div className="space-y-2 border-b border-white/10 pb-4">
-                  <input name="name" type="text" required placeholder="YOUR NAME" className="w-full bg-transparent text-lg md:text-xl font-black uppercase tracking-tighter outline-none placeholder:text-white/10 focus:placeholder:text-white/5 transition-all text-white" />
+                  <input name="name" type="text" required placeholder="YOUR NAME" className="w-full bg-transparent text-lg md:text-xl font-black uppercase tracking-tighter outline-none placeholder:text-white focus:placeholder:text-white/50 transition-all text-white" />
                 </div>
                 <div className="space-y-2 border-b border-white/10 pb-4">
-                  <input name="email" type="email" required placeholder="YOUR EMAIL" className="w-full bg-transparent text-lg md:text-xl font-black uppercase tracking-tighter outline-none placeholder:text-white/10 focus:placeholder:text-white/5 transition-all text-white" />
+                  <input name="email" type="email" required placeholder="YOUR EMAIL" className="w-full bg-transparent text-lg md:text-xl font-black uppercase tracking-tighter outline-none placeholder:text-white focus:placeholder:text-white/50 transition-all text-white" />
                 </div>
                 <div className="space-y-2 border-b border-white/10 pb-4">
-                  <textarea name="message" required rows={1} placeholder="YOUR MESSAGE" className="w-full bg-transparent text-lg md:text-xl font-black uppercase tracking-tighter outline-none placeholder:text-white/10 focus:placeholder:text-white/5 transition-all text-white resize-none" />
+                  <textarea name="message" required rows={1} placeholder="YOUR MESSAGE" className="w-full bg-transparent text-lg md:text-xl font-black uppercase tracking-tighter outline-none placeholder:text-white focus:placeholder:text-white/50 transition-all text-white resize-none" />
                 </div>
                 
                 {status === 'error' && (
@@ -154,7 +154,7 @@ export default function Contact() {
       <footer className="mt-24 md:mt-40 pt-12 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
         <div className="flex items-center gap-4">
           <img src="/logo.png" alt="Brightlume Logo" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
-          <span className="text-[10px] font-black tracking-widest text-white uppercase">Brightlume Digital © 2026</span>
+          <span className="text-[10px] font-black tracking-widest text-white uppercase">Brightlume Digital Media © 2026</span>
         </div>
         
         <div className="flex flex-col sm:flex-row gap-8 md:gap-12 text-[10px] font-black tracking-[0.3em] uppercase items-center">
