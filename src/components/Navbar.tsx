@@ -29,7 +29,7 @@ export default function Navbar() {
             window.location.reload();
           }}
         >
-          <img src="/logo.png" alt="Brightlume Logo" className="w-8 h-8 md:w-12 md:h-12 object-contain" />
+          <img src="/public/website logo.png" alt="Brightlume Logo" className="w-8 h-8 md:w-12 md:h-12 object-contain" />
           <div className="flex flex-col leading-none">
             <span className="font-display font-black text-xl md:text-2xl tracking-tighter text-brightlume-gold">
               BRIGHTLUME

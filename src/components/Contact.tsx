@@ -158,7 +158,7 @@ export default function Contact() {
 
       <footer className="mt-24 md:mt-40 pt-12 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
         <div className="flex items-center gap-4">
-          <img src="/logo.png" alt="Brightlume Logo" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
+          <img src="/public/website logo.png" alt="Brightlume Logo" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
           <span className="text-[10px] font-black tracking-widest text-white uppercase">Brightlume Digital Media © 2026</span>
         </div>
         
