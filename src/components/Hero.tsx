@@ -2,6 +2,8 @@ import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
 import { useRef, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 
+const LIQUID_TRANSITION = { duration: 1.2, ease: [0.16, 1, 0.3, 1] };
+
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   
@@ -49,9 +51,9 @@ export default function Hero() {
           className="flex flex-col items-start"
         >
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={LIQUID_TRANSITION}
             className="flex items-center gap-4 mb-4"
           >
             <div className="w-12 h-[1px] bg-brightlume-gold" />
@@ -61,9 +63,9 @@ export default function Hero() {
           </motion.div>
 
           <motion.h1 
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "circOut" }}
+            transition={{ ...LIQUID_TRANSITION, delay: 0.1 }}
             className="text-[18vw] sm:text-[14vw] lg:text-[12vw] font-display font-black leading-[0.85] tracking-tighter uppercase text-white drop-shadow-2xl"
           >
             Digital <br />
@@ -72,18 +74,18 @@ export default function Hero() {
 
           <div className="mt-8 md:mt-12 flex flex-col lg:flex-row items-center lg:items-end justify-between w-full gap-8 lg:gap-12">
             <motion.p 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 1 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ...LIQUID_TRANSITION, delay: 0.3 }}
               className="max-w-xl text-center lg:text-left text-base md:text-xl lg:text-2xl text-white/40 leading-tight font-medium uppercase italic"
             >
               WE ENGINEER HIGH-PERFORMANCE LEAD SYSTEMS <br className="hidden md:block" /> AND BRAND NARRATIVES THAT COMMAND THE MARKET.
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.8 }}
+              initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ ...LIQUID_TRANSITION, delay: 0.5 }}
             >
               <button className="group relative px-8 py-8 md:px-12 md:py-12 bg-brightlume-gold rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-500 overflow-hidden">
                 <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500" />

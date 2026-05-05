@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Send, Instagram, Youtube, Linkedin } from 'lucide-react';
 
+const LIQUID_TRANSITION = { duration: 0.8, ease: [0.16, 1, 0.3, 1] };
+
 export default function Contact() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
@@ -11,8 +13,9 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-32 items-center">
           <div>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={LIQUID_TRANSITION}
               viewport={{ once: true }}
             >
               <div className="flex items-center gap-4 mb-8">
@@ -68,6 +71,7 @@ export default function Contact() {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
+            transition={LIQUID_TRANSITION}
             viewport={{ once: true }}
             className="flex flex-col justify-center bg-black p-8 md:p-16 rounded-3xl md:rounded-[40px] text-white border border-white/5"
           >
@@ -75,6 +79,7 @@ export default function Contact() {
               <motion.div 
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
+                transition={LIQUID_TRANSITION}
                 className="text-center py-12"
               >
                 <div className="w-20 h-20 bg-brightlume-gold/20 rounded-full flex items-center justify-center mx-auto mb-6">

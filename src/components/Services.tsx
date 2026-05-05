@@ -53,6 +53,8 @@ const services = [
   }
 ];
 
+const LIQUID_TRANSITION = { duration: 0.8, ease: [0.16, 1, 0.3, 1] };
+
 export default function Services() {
   const [selectedService, setSelectedService] = useState<typeof services[0] | null>(null);
 
@@ -60,7 +62,13 @@ export default function Services() {
     <section id="services" className="py-24 lg:py-40 px-6 md:px-8 bg-white text-black bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-opacity-5">
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-8 lg:gap-12 mb-16 lg:mb-32">
-          <div className="relative">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={LIQUID_TRANSITION}
+            viewport={{ once: true }}
+            className="relative"
+          >
             <div className="flex items-center gap-4 mb-6 lg:mb-8">
               <div className="w-12 h-1 bg-brightlume-gold" />
               <span className="text-[10px] font-black tracking-[0.5em] text-brightlume-gold uppercase">Capabilities</span>
@@ -68,19 +76,25 @@ export default function Services() {
             <h2 className="text-6xl md:text-8xl lg:text-9xl font-display font-black leading-[0.8] tracking-tighter uppercase shrink-0">
               The <br /> Arsenal.
             </h2>
-          </div>
-          <p className="max-w-md text-lg lg:text-xl font-bold uppercase tracking-tight text-black/60 italic border-l-4 border-brightlume-gold pl-6 lg:pl-8 lg:mb-4">
+          </motion.div>
+          <motion.p 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ ...LIQUID_TRANSITION, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="max-w-md text-lg lg:text-xl font-bold uppercase tracking-tight text-black/60 italic border-l-4 border-brightlume-gold pl-6 lg:pl-8 lg:mb-4"
+          >
             We don't provide general marketing. We provide specialized digital leverage designed to scale your revenue with calculated precision.
-          </p>
+          </motion.p>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 border-t border-black/10">
           {services.map((service, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: idx * 0.1 }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ ...LIQUID_TRANSITION, delay: idx * 0.05 }}
               viewport={{ once: true }}
               onClick={() => setSelectedService(service)}
               className="group p-4 sm:p-8 lg:p-12 border-b border-r border-black/10 hover:bg-black hover:text-white transition-all duration-700 min-h-[140px] sm:min-h-[300px] md:min-h-[400px] flex flex-col justify-between cursor-pointer"
@@ -126,9 +140,10 @@ export default function Services() {
             />
             
             <motion.div
-              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              initial={{ scale: 0.9, opacity: 0, y: 50 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              exit={{ scale: 0.9, opacity: 0, y: 50 }}
+              transition={LIQUID_TRANSITION}
               className="relative w-full max-w-5xl bg-[#0b0b0b] text-white overflow-hidden rounded-2xl md:rounded-[40px] shadow-2xl overflow-y-auto max-h-[90vh]"
             >
               <button 

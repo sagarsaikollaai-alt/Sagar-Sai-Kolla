@@ -27,12 +27,20 @@ const steps = [
   }
 ];
 
+const LIQUID_TRANSITION = { duration: 0.8, ease: [0.16, 1, 0.3, 1] };
+
 export default function Process() {
   return (
     <section id="process" className="py-24 lg:py-40 px-6 md:px-8 bg-[#0b0b0b] relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-20 mb-16 lg:mb-32">
-          <div className="relative">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={LIQUID_TRANSITION}
+            viewport={{ once: true }}
+            className="relative"
+          >
             <div className="flex items-center gap-4 mb-6 lg:mb-8">
               <div className="w-12 h-1 bg-brightlume-gold" />
               <span className="text-[10px] font-black tracking-[0.5em] text-brightlume-gold uppercase">Methodology</span>
@@ -40,22 +48,28 @@ export default function Process() {
             <h2 className="text-6xl md:text-8xl lg:text-[8vw] font-black font-display uppercase leading-[0.85] tracking-tighter shrink-0">
               The <br /><span className="text-stroke">Blueprint.</span>
             </h2>
-          </div>
+          </motion.div>
           
-          <div className="max-w-md lg:mt-24">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ ...LIQUID_TRANSITION, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="max-w-md lg:mt-24"
+          >
             <p className="text-lg lg:text-xl font-bold uppercase tracking-tight text-white/40 leading-snug italic border-l-4 border-brightlume-gold pl-6 lg:pl-8">
               A structured, results-obsessed system designed for businesses that demand consistent, measurable scale. No fluff, just leverage.
             </p>
-          </div>
+          </motion.div>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10">
           {steps.map((step, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: idx * 0.1 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ ...LIQUID_TRANSITION, delay: idx * 0.1 }}
               viewport={{ once: true }}
               className="bg-[#0b0b0b] p-4 sm:p-8 md:p-12 group hover:bg-brightlume-gold transition-all duration-700 min-h-[220px] sm:min-h-[400px] md:min-h-[500px] flex flex-col justify-between"
             >
